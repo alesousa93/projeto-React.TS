@@ -14,14 +14,15 @@ const useListaCadastros = () => {
     }, []);
 
     const incluirCadastro = (data: FormFields) => {
-        const novosCadastros = [...cadastros, data];
+        const novoID = cadastros.length > 0 ? Math.max(...cadastros.map (cadastro => cadastro.ID || 0)) + 1 : 1;
+        const novosCadastros = [...cadastros, {...data, ID: novoID}];
         setCadastros(novosCadastros);
         localStorage.setItem(lista, JSON.stringify(novosCadastros));
     }
 
     const atualizarCadastro = (index: number, novoCadastro: FormFields) => {
         const novosCadastros = [...cadastros];
-        novosCadastros[index] = novoCadastro;
+        novosCadastros[index] = {...novoCadastro, ID: novosCadastros[index].ID};
         setCadastros(novosCadastros);
         localStorage.setItem(lista, JSON.stringify(novosCadastros));
     };
