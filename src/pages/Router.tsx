@@ -14,7 +14,7 @@ function Router(){
                 <Route path="/cadastro" element={<Form3 />} />
                 <Route path="/lista-cadastros" element={<ListaCadastros />} />
                 <Route path="/editar-cadastros" element={<EditClient />} />
-                <Route path="/editar-cadastros/id-:id" element={<EditClientID />} />
+                <Route path="/editar-cadastros/:id" element={<EditClientID />} />
             </Routes>
         </BrowserRouter>
     )

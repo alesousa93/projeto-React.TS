@@ -7,7 +7,7 @@ const EditClient = () => {
   
   const handleEdit = (id: number | undefined) => {
       if (id !== undefined) {
-        navigate(`/editar-cadastros/id-${id}`)
+        navigate(`/editar-cadastros/${id}`)
       }
     };
 
